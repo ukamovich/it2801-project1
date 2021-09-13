@@ -1,0 +1,164 @@
+:root{
+    --main-radius: 1px;
+    --main-padding: 20px;
+}
+
+.body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6em;
+}
+
+#artHeading {
+    font-size: 40px;
+}
+#about p {
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 2.5px;
+}
+
+/* Styling for container */
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr 1.5fr 0.8fr;
+    grid-template-areas: 
+        "about about about about"
+        "svg svg canvas canvas"
+        "svg svg canvas canvas"
+        "docs docs docs docs";
+}
+
+#about {
+    background: gainsboro;
+    grid-area: about;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);   
+}
+
+#svg {
+    display: grid;
+    text-align: center;
+    background: turquoise;
+    grid-area: svg;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#canvas {
+    display: grid;
+    text-align: center;
+    background: greenyellow;
+    grid-area: canvas;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#docs {
+    display: grid;
+    background: grey;
+    grid-area: docs;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+@media only screen and (max-width: 550px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 1.2fr 1.2fr 1fr;
+        grid-template-areas:
+            "about"
+            "svg"
+            "canvas"
+            "docs";
+    }
+}
+
+/* Animate circles */
+.animate-circle-colors {
+    animation: colors 5s infinite;
+    
+}
+@keyframes colors {
+    0%  {fill:  red;}
+    25% {fill: blueviolet}
+    50% {fill: blue;}
+    75% {fill: green;}
+    100% {fill: yellowgreen;}
+    
+}
+
+/* Styling for SVG art buttons */
+.button {
+    margin: auto;
+    border: none;
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: #3a4043 4px 4px 10px 1px;
+    cursor: pointer;
+    opacity: 2;
+    font-weight: 700;
+}
+
+.button:hover {
+    background-color: powderblue;
+}
+
+.button1 {
+    background-color: blueviolet;
+}
+
+/* Styling for the documentation section */
+#answers {
+    padding: 50px;
+    display: none;
+}
+
+.article-content p {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: whitesmoke;
+    font-family: Roboto,Arial,Helvetica,sans-serif;
+    font-size: .975rem;
+    font-weight: 400;
+    letter-spacing: .01562rem;
+    line-height: 1.5rem;
+}
+
+.list-content li {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: whitesmoke;
+    font-family: Roboto,Arial,Helvetica,sans-serif;
+    font-size: .975rem;
+    font-weight: 400;
+    letter-spacing: .01562rem;
+    line-height: 1.5rem;
+}
+
+.square {
+        background: yellow;
+        border: 1px solid #aaa;
+        width: 50px;
+        height: 50px;
+        margin: 0 5px;
+        float: left;
+      }
+
+.threeSquares {
+    grid-area: canvas;
+    align-content: justify;
+}
+
+#whatFace {
+    grid-area: canvas;
+    align-content: justify;
+}

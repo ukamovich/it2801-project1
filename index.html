@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="IT2810. Project #1" />
+    <meta name="author" content="Uladzimir Kamovich" />
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="src/scripts.js"></script>
+    <title>My abstract picture</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- About section-->
+      <div id="about">
+        <p>
+          The person behind this page and two art figures has been inspired by
+          simple forms. The SVG art object is the result of visiting the
+          exhbition of Kazimir Malevich
+          <a
+            href="https://en.wikipedia.org/wiki/Kazimir_Malevich"
+            target="_blank"
+            >(a Russian avant-garde artist)</a
+          >
+          in the Tate Gallery in London back in 2016. The Canvas art object is
+          an attempt to create a new emoji face – What Face – since the author
+          is a big fan of emojis. In addition, he got inspired by existing code
+          snippets to create three squares, where one of them is toggling up and
+          down, and can change color using a button.
+        </p>
+        <p>
+          Currently, the author of this page studies Computer Science at NTNU
+          and is looking forward to work on a project with other group mates.
+          IT2810 looks like a very exciting subject with a lot of hands-on
+          learning, which is awesome.
+        </p>
+      </div>
+
+      <!-- SVG art section -->
+      <div id="svg">
+        <p id="artHeading">SVG art</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="70%"
+          height="70%"
+          viewBox="0 0 1200 500"
+        >
+          <title>Weird SVG figure</title>
+          <desc>Creating art using SVG hard coding</desc>
+
+          <circle
+            cx="690"
+            cy="195"
+            r="80"
+            stroke="yellow"
+            stroke-width="5"
+            fill="red"
+          />
+
+          <circle
+            class="animate-circle-colors"
+            cx="790"
+            cy="90"
+            r="60"
+            stroke="red"
+            stroke-width="5"
+            fill="yellow"
+          />
+
+          <circle
+            class="animate-circle-colors"
+            cx="910"
+            cy="90"
+            r="60"
+            stroke="red"
+            stroke-width="5"
+            fill="yellow"
+          />
+
+          <circle
+            cx="1016"
+            cy="195"
+            r="80"
+            stroke="yellow"
+            stroke-width="5"
+            fill="red"
+          />
+
+          <polygon
+            id="polygon"
+            fill="lime"
+            stroke="yellow"
+            stroke-width="5"
+            points="850,75  958,137.5 958,262.5
+                    850,325 742,262.6 742,137.5"
+          />
+        </svg>
+        <div id="swap_blue" class="button">Swap polygon color to blue</div>
+        <div id="swap_lime" class="button">Swap polygon color to lime</div>
+      </div>
+
+      <!-- Canvas art-->
+      <div id="canvas">
+        <p id="artHeading">Canvas art</p>
+        <canvas id="whatFace"></canvas>
+        <div class="threeSquares">
+          <div class="square"></div>
+          <div id="mover" class="square"></div>
+          <div class="square"></div>
+           <div id="run" class="button">Change color of the moving square</div>
+        </div>
+
+        <script>
+          /* Animate script for Canvas art */
+          $("#run").click(function () {
+            $("#mover").css("background", "green");
+          });
+          function animateIt() {
+            $("#mover").slideToggle("slow", animateIt);
+          }
+          animateIt();
+        </script>
+      
+      </div>
+
+      <!-- Answers to the questions -->
+      <div id="docs">
+        <button class="button button1">Reveal or Hide Answers</button>
+        <div id="answers">
+          <article class="article-content">
+            <p>
+              Question 1: I decided to focuss on using CSS-grid only solution
+              across this page. My choice is determined by the desire to master
+              one grid layout at the moment. First, I used a piece of paper to
+              roughly design how the page will look like. Second, I divided the
+              page into a grid with sections using columns and rows. Then, I
+              created class "container" and positioned each section using
+              'grid-template-areas'. Each area has a unique id (#about, #svg,
+              #canvas, #docs) and its styling.
+            </p>
+            <p>
+              Question 2: For SVG figure, I did 'hard coding' to draw
+              vector-based figure in a separate file with extention .svg. After
+              the figure was ready, I simply embedded the SVG code snippet
+              inside the #svg area. To animate the SVG figure, I used @keyframes
+              in style.css, while for interactivity (changing colors with
+              buttons), I used jQuery and wrote a script in scripts.js file. For
+              HTML canvas figure, I used the canvas element to embed inside the
+              #canvas area. For actual drawying, I used Canvas API, which
+              provides the posibility for drawing 2D graphics via JavaScript.
+              Since I had difficulaties to implement animation and interactivity
+              for the HTML canvas figure (What Face), I creted a separate figure
+              (3 squares), and wrote a script to show animation and
+              interactivity.
+            </p>
+            <p>
+              Question 3: Since I did not know much about jQuery before this
+              assignmet, I read and watched a few tuturials about the
+              differences between jQeury and JavaScript. It was clear that
+              jQuery is much easier to use for manipulation and animation of
+              both SVG and HTML canvas art figures. I used jQuery for writing
+              scripts to manipulate the figures and to reveal/hide answers to
+              the required questions.
+            </p>
+            <p>
+              Question 4: I used 3 browsers (Firefox, Safari, Chrome) to test
+              the page. Unfortunately, the content of the page is not displayed
+              well under Safari and Chrome while changing the size of the brower
+              window or zooming in and out. Ideally, Firefox should be usedd to
+              avoid visual inconvenience.
+            </p>
+            <p>
+            Video Tutorials              
+              <ul class="list-content"> 
+                <li>HTML Tutorial for Beginners: <a href="https://www.youtube.com/watch?v=qz0aGYrrlhU" target="_blank">https://www.youtube.com/watch?v=qz0aGYrrlhU</a></li>
+                <li>HTML Crash Course in 30 Minutes: <a href="https://www.youtube.com/watch?v=XiQ9rjaa2Ow" target="_blank">https://www.youtube.com/watch?v=XiQ9rjaa2Ow</a></li>
+               <li>Responsive CSS grid tutorial: <a href="https://www.youtube.com/watch?v=68O6eOGAGqA" target="_blank">https://www.youtube.com/watch?v=68O6eOGAGqA</a></li>
+              </ul>
+            </p>
+            <p> Manuals
+              <ul class="list-content"> 
+                <li>CSS Layout: <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout" target="_blank">https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout</a></li>
+                <li>jQuery Manual: <a href="https://www.w3schools.com/jquery/default.asp" target="_blank">https://www.w3schools.com/jquery/default.asp</a></li>
+               <li>MDN Web Docs (Grids): <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids" target="_blank">https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids</a></li>
+               <li>MDN Web Docs (Canvas API): <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank">https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API</a></li>
+              </ul>
+            </p>
+            <p>
+              Code Snippets
+              <ul class="list-content"> 
+                <li>Canvas art: <a href="https://turbofuture.com/graphic-design-video/HTML5-Tutorial-Basics-of-Canvas-Drawing" target="_blank">https://turbofuture.com/graphic-design-video/HTML5-Tutorial-Basics-of-Canvas-Drawing</a></li>
+                <li>Canvas art manipulation and animation: <a href="https://api.jquery.com/animated-selector/" target="_blank">https://api.jquery.com/animated-selector/</a></li>
+              </ul>
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <!-- Svg art  -->
+    <div class="svg_art"></div>
+  </body>
+</html>
