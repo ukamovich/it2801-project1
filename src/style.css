@@ -1,6 +1,6 @@
 :root{
     --main-radius: 1px;
-    --main-padding: 20px;
+    --main-padding: 10px;
 }
 
 .body {
@@ -23,8 +23,14 @@
 .container {
     display: grid;
     height: 100vh;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1.5fr 1.5fr 0.8fr;
+    width: auto;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; 
+        grid-template-rows: 0.2fr 1.5fr 1.5fr 0.8fr;
+    */
+    
+    
     grid-template-areas: 
         "about about about about"
         "svg svg canvas canvas"
@@ -39,25 +45,27 @@
     padding-top: var(--main-padding);   
 }
 
-#svg {
-    display: grid;
-    text-align: center;
+.svg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: turquoise;
     grid-area: svg;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
 }
 
-#canvas {
-    display: grid;
-    text-align: center;
+.canvas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: greenyellow;
     grid-area: canvas;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
 }
 
-#docs {
+.docs {
     display: grid;
     background: grey;
     grid-area: docs;
@@ -155,10 +163,8 @@
 
 .threeSquares {
     grid-area: canvas;
-    align-content: justify;
 }
 
 #whatFace {
     grid-area: canvas;
-    align-content: justify;
 }

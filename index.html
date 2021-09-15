@@ -40,52 +40,52 @@
       </div>
 
       <!-- SVG art section -->
-      <div id="svg">
+      <div class="svg">
         <p id="artHeading">SVG art</p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="70%"
           height="70%"
-          viewBox="0 0 1200 500"
+          viewBox="0 0 100 100"
         >
           <title>Weird SVG figure</title>
           <desc>Creating art using SVG hard coding</desc>
 
           <circle
-            cx="690"
-            cy="195"
-            r="80"
+            cx="30%"
+            cy="50%"
+            r="8"
             stroke="yellow"
-            stroke-width="5"
+            stroke-width="1"
             fill="red"
           />
 
           <circle
             class="animate-circle-colors"
-            cx="790"
-            cy="90"
-            r="60"
+            cx="60%"
+            cy="28%"
+            r="6"
             stroke="red"
-            stroke-width="5"
+            stroke-width="1"
             fill="yellow"
           />
 
           <circle
             class="animate-circle-colors"
-            cx="910"
-            cy="90"
-            r="60"
+            cx="40%"
+            cy="28%"
+            r="6"
             stroke="red"
-            stroke-width="5"
+            stroke-width="1"
             fill="yellow"
           />
 
           <circle
-            cx="1016"
-            cy="195"
-            r="80"
+            cx="70%"
+            cy="50%"
+            r="8"
             stroke="yellow"
-            stroke-width="5"
+            stroke-width="1"
             fill="red"
           />
 
@@ -93,9 +93,8 @@
             id="polygon"
             fill="lime"
             stroke="yellow"
-            stroke-width="5"
-            points="850,75  958,137.5 958,262.5
-                    850,325 742,262.6 742,137.5"
+            stroke-width="1"
+            points="65,35 50,75 35,35 "
           />
         </svg>
         <div id="swap_blue" class="button">Swap polygon color to blue</div>
@@ -103,7 +102,7 @@
       </div>
 
       <!-- Canvas art-->
-      <div id="canvas">
+      <div class="canvas">
         <p id="artHeading">Canvas art</p>
         <canvas id="whatFace"></canvas>
         <div class="threeSquares">
@@ -112,7 +111,6 @@
           <div class="square"></div>
            <div id="run" class="button">Change color of the moving square</div>
         </div>
-
         <script>
           /* Animate script for Canvas art */
           $("#run").click(function () {
@@ -123,11 +121,10 @@
           }
           animateIt();
         </script>
-      
       </div>
 
       <!-- Answers to the questions -->
-      <div id="docs">
+      <div class="docs">
         <button class="button button1">Reveal or Hide Answers</button>
         <div id="answers">
           <article class="article-content">
